@@ -19,3 +19,10 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+"""
+def update_user_profile(request, userId):
+    user = User.objects.get(pk=userId)
+    user.profile.name="홍길동" # request에서 받아서 처리
+    user.save()
+"""
